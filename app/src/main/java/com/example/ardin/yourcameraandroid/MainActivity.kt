@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val IMAGE_REQUEST_CODE = 1
+    companion object {
+        const val IMAGE_REQUEST_CODE = 1
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             val imageBitmap = extras?.get("data") as Bitmap
             showImage.setImageBitmap(imageBitmap)
         } else {
-            Toast.makeText(this, "Failed to capture image", Toast.LENGTH_LONG)
+            Toast.makeText(this, "Failed to load image", Toast.LENGTH_LONG)
                     .show()
         }
     }
